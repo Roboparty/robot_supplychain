@@ -1,0 +1,12 @@
+# Playbooks
+
+可勾选的作业步骤。原则在 `docs/`，门类细节在 `knowhow/`。
+
+| 文档 | 对应 Gate |
+|---|---|
+| [sourcing.md](./sourcing.md) | 寻源短名单 |
+| [supplier-qualification.md](./supplier-qualification.md) | G1 之后、G3 之前 |
+| [rfq.md](./rfq.md) | G2 |
+| [first-article.md](./first-article.md) | G2 |
+| [incoming-inspection.md](./incoming-inspection.md) | G4 |
+| [ncr.md](./ncr.md) | 异常闭环 |

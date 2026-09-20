@@ -1,0 +1,32 @@
+# Secrets and local env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+
+# Credentials
+credentials.json
+secrets.json
+*.secret
+
+# Contract scans / PII dumps
+*.p12
+*.pfx
+contracts/raw/
+scans/
+
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Excel working copies with contacts (keep templates only)
+*联系方式*
+*contact*
+~$*
