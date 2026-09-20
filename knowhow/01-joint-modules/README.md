@@ -9,13 +9,14 @@
 | 小类 | 干什么 | 入口 |
 |---|---|---|
 | 减速机 | 把电机高速小扭变成关节低速大扭 | [reducer/](./reducer/README.md) |
-| 无框力矩电机 | 提供电磁转矩，常套在减速器周围 | [frameless-motor.md](./frameless-motor.md) |
+| 无框力矩电机 | 电磁转矩；先分内转子 / 外转子 | [frameless-motor/](./frameless-motor/README.md) |
 | 编码器 | 告诉控制器转子/关节在哪 | [encoder.md](./encoder.md) |
 | 驱动器 | 电流环 / 速度环 / 位置环与总线 | [driver.md](./driver.md) |
 | 制动器 | 断电保持、防坠落 | [brake.md](./brake.md) |
 | 一体化关节 | 上述零件做成一个可采购单元 | [integrated-joint.md](./integrated-joint.md) |
 
-减速机再往下分：[谐波](./reducer/harmonic.md) · [行星](./reducer/planetary.md) · [摆线](./reducer/cycloidal.md)。
+减速机再往下分：[谐波](./reducer/harmonic.md) · [行星](./reducer/planetary.md) · [摆线](./reducer/cycloidal.md)。  
+无框电机再往下分：[内转子](./frameless-motor/inner-rotor.md) · [外转子](./frameless-motor/outer-rotor.md)。
 
 ## 大类必须一起冻的接口
 
