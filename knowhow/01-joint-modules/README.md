@@ -15,7 +15,7 @@
 | 制动器 | 断电保持、防坠落 | [brake.md](./brake.md) |
 | 一体化关节 | 上述零件做成一个可采购单元 | [integrated-joint.md](./integrated-joint.md) |
 
-减速机再往下分：[谐波](./reducer/harmonic.md) · [行星](./reducer/planetary.md) · [摆线](./reducer/cycloidal.md)。  
+减速机再往下分：[谐波](./reducer/harmonic.md) · [行星](./reducer/planetary/README.md)（[NGW/NW](./reducer/planetary/types.md) · [齿轮](./reducer/planetary/gears.md)） · [摆线](./reducer/cycloidal.md)。  
 无框电机再往下分：[内转子](./frameless-motor/inner-rotor.md) · [外转子](./frameless-motor/outer-rotor.md)。
 
 ## 大类必须一起冻的接口
