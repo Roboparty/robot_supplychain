@@ -1,26 +1,28 @@
 # 机器人供应链 Knowhow
 
-人形 / 具身智能机器人早期硬件供应链的**可复用知识库**：怎么选型、怎么询价、怎么验收、怎么避坑。
+人形 / 具身智能机器人早期硬件供应链的**元器件知识库**：每种料是什么、用在哪、怎么选、怎么验。
 
-本仓库只放框架、原则、门类 knowhow 与清单模板。  
+分类是 **大类 → 小类 → 细分**。例如关节模组 → 减速机 → 谐波 / 行星 / 摆线。
+
+本仓库只放介绍、选型口径与清单模板。  
 **不放**合同扫描件、密钥、未脱敏对公账号，以及供应商完整电话 / 个人微信。
 
-姊妹作业仓库（询价、PO、供应商名录）是 `作业仓库`；那里记「这次买了什么」，这里记「为什么这样买、下次怎么更快判」。
+姊妹作业仓库（询价、PO、供应商名录）是 `作业仓库`；那里记「这次买了什么」，这里记「这颗料是什么、下次怎么判」。
 
 ## 先读这三页
 
-1. [docs/principles.md](./docs/principles.md) — 铁律与决策原则  
-2. [docs/gates.md](./docs/gates.md) — G0–G5 放行门  
-3. [knowhow/README.md](./knowhow/README.md) — 按物料门类查规格、坑和验收  
+1. [knowhow/README.md](./knowhow/README.md) — 元器件分类树  
+2. [knowhow/01-joint-modules/README.md](./knowhow/01-joint-modules/README.md) — 关节模组范例（减速机 / 电机 / 编码 / 驱动）  
+3. [docs/gates.md](./docs/gates.md) — 买的时候怎么过 G0–G5  
 
 ## 目录
 
 | 路径 | 用途 |
 |---|---|
-| [docs/](./docs/) | 总原则、Gate、自制 vs 外购、RACI、入库纪律 |
-| [knowhow/](./knowhow/) | 按门类：规格怎么冻、询价看什么、IQC 抽什么 |
+| [knowhow/](./knowhow/) | 元器件介绍：大类 / 小类 / 细分 |
+| [docs/](./docs/) | 铁律、Gate、自制 vs 外购、RACI、入库纪律 |
 | [playbooks/](./playbooks/) | 询价、准入、首件、来料、不合格闭环 |
-| [templates/](./templates/) | 新增一条 knowhow 的卡片模板 |
+| [templates/](./templates/) | 新元器件页、复盘卡片模板 |
 
 ## 铁律（一句话）
 
@@ -32,4 +34,4 @@
 
 ## 怎么往里写
 
-每学到一条可复用结论，用 [templates/knowhow-card.md](./templates/knowhow-card.md) 开一张卡片，挂到对应门类页。卡片里只写口径与判据，不写私人联系方式。
+新元器件用 [templates/component.md](./templates/component.md) 开页，挂进对应大类 README。复盘结论用 [templates/knowhow-card.md](./templates/knowhow-card.md) 追加到该页末尾。不写私人联系方式。

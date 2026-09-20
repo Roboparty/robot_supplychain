@@ -1,18 +1,67 @@
-# 门类 Knowhow
+# 元器件 Knowhow
 
-按「怎么买」分类，不按供应商名册。供应商短名单放作业仓库；这里只写规格、工艺、坑、验收。
+本目录按 **大类 → 小类 → 细分** 记元器件：它是什么、用在哪、选型冻什么、怎么验、踩过什么坑。
 
-| 门类 | 典型物料 | 默认路径 |
+不维护供应商名录和联系方式。名录在作业仓库 `作业仓库`。
+
+## 分类树
+
+```text
+关节模组
+  ├─ 减速机
+  │    ├─ 谐波
+  │    ├─ 行星
+  │    └─ 摆线（含 RV）
+  ├─ 无框力矩电机
+  ├─ 编码器
+  ├─ 驱动器
+  ├─ 制动器
+  └─ 一体化关节（买成套时）
+
+结构件
+  ├─ CNC 机加
+  ├─ 钣金
+  ├─ 型材
+  ├─ 压铸
+  ├─ 注塑
+  ├─ 3D 打印
+  └─ 表面处理
+
+电子器件
+  ├─ PCB / SMT
+  ├─ 线束
+  ├─ 接插件
+  ├─ 算力 / 主控
+  └─ 电源模块
+
+传感器
+  ├─ 力 / 力矩
+  ├─ 触觉
+  ├─ IMU
+  └─ 视觉
+
+能源
+  ├─ 电芯
+  └─ PACK / BMS
+
+末端
+  └─ 灵巧手
+
+标准件
+  ├─ 轴承
+  └─ 紧固件
+```
+
+## 大类索引
+
+| 大类 | 这一类在整机里干什么 | 入口 |
 |---|---|---|
-| [关节模组](./categories/joint-modules.md) | 一体化关节、谐波 / 行星 / RV、无框电机 | ODM 规格冻结 → 台架 → 小批 |
-| [CNC 机加](./categories/cnc.md) | 铝件、法兰、壳体、关节座 | 出图冻结 → 打样 FAI → 小批 |
-| [钣金](./categories/sheet-metal.md) | 电池盒、算力盒、支架 | 折弯公差与表面处理写死 |
-| [电子与线束](./categories/electronics.md) | PCB、接插件、线束 | 长周期先锁；线束按图纸验收 |
-| [传感器](./categories/sensors.md) | 力觉、触觉、IMU、视觉 | 接口协议与标定流程先冻 |
-| [电池](./categories/battery.md) | 电芯 / PACK | 认证 + 运输仓储规则 |
-| [灵巧手](./categories/dexterous-hands.md) | 末端、驱控 | 自由度 / 力控 / 通信先冻 |
-| [轴承与标准件](./categories/bearings-hardware.md) | 轴承、紧固件 | 可跳过打样，不可跳过点数与等级 |
-| [注塑 / 压铸 / 表面处理](./categories/tooling-and-surface.md) | 开模件、阳极、喷涂 | 样机阶段慎开模 |
-| [3D 打印](./categories/3d-print.md) | 工装、手板 | 不默认承力量产 |
+| 关节模组 | 把电变成可控的关节力矩与角度 | [01-joint-modules](./01-joint-modules/README.md) |
+| 结构件 | 承力、连接、盒体、外观骨架 | [02-structure](./02-structure/README.md) |
+| 电子器件 | 供电、算力、驱动板、互连 | [03-electronics](./03-electronics/README.md) |
+| 传感器 | 力、触、惯导、视觉 | [04-sensors](./04-sensors/README.md) |
+| 能源 | 电芯到 PACK | [05-energy](./05-energy/README.md) |
+| 末端 | 手与作业接口 | [06-end-effector](./06-end-effector/README.md) |
+| 标准件 | 轴承、螺丝等 COTS | [07-standard-parts](./07-standard-parts/README.md) |
 
-新增结论用 [templates/knowhow-card.md](../templates/knowhow-card.md) 追加到对应门类页末尾。
+新增元器件：先对上表找大类，再用 [templates/component.md](../templates/component.md) 开一页。

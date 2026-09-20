@@ -1,6 +1,6 @@
 # Knowhow 卡片模板
 
-复制到对应 `knowhow/` 页面末尾。只写可复用结论。
+复制到对应元器件页末尾。只写可复用结论。新开一种元器件用 [component.md](./component.md)。
 
 ```markdown
 ## YYYY-MM-DD · 一句话标题
