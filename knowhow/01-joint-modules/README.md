@@ -16,7 +16,7 @@
 | 一体化关节 | 上述零件做成一个可采购单元 | [integrated-joint.md](./integrated-joint.md) |
 
 减速机再往下分：[谐波](./reducer/harmonic.md) · [行星](./reducer/planetary/README.md)（[NGW/NW](./reducer/planetary/types.md) · [齿轮](./reducer/planetary/gears.md)） · [摆线](./reducer/cycloidal.md)。  
-无框电机再往下分：[内转子](./frameless-motor/inner-rotor.md) · [外转子](./frameless-motor/outer-rotor.md)；装配 / 霍尔 / 温敏见 [frameless-motor/](./frameless-motor/README.md)。
+无框电机再往下分：[内转子](./frameless-motor/inner-rotor.md) · [外转子](./frameless-motor/outer-rotor.md)；[槽极](./frameless-motor/slot-pole.md) · [绕线](./frameless-motor/winding.md) · [磁钢](./frameless-motor/magnet.md) · [叠片 / 分瓣](./frameless-motor/core.md) · 装配 / 霍尔 / 温敏见 [frameless-motor/](./frameless-motor/README.md)。
 
 ## 大类必须一起冻的接口
 
