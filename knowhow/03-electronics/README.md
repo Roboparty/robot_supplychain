@@ -9,8 +9,8 @@
 | 小类 | 干什么 | 入口 |
 |---|---|---|
 | PCB / SMT | 驱动板、主控板、转接板 | [pcb.md](./pcb.md) |
-| 线束 | 动力线、信号线、整机互联 | [harness.md](./harness.md) |
-| 接插件 | 可拆互连、防呆 | [connectors.md](./connectors.md) |
+| 线束 | 动力线、信号线、整机互联 | [harness.md](./harness.md)（[线材 / AWG](./wire/README.md)） |
+| 接插件 | 可拆互连、防呆；关节常用 XT30（2+2） | [connectors/](./connectors/README.md) |
 | 算力 / 主控 | 规划、推理、全身调度 | [compute.md](./compute.md) |
 | 电源模块 | 母线、DCDC、预充 | [power.md](./power.md) |
 
