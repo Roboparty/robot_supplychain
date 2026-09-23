@@ -9,7 +9,7 @@
 | 细分 | 典型特征 | 人形上常见位置 | 入口 |
 |---|---|---|---|
 | 谐波 | 齿比大、体积小、回差小、柔轮怕冲击 | 肩、肘、腕、部分膝 | [harmonic/](./harmonic/README.md)（[结构](./harmonic/structure.md) · [额定](./harmonic/ratings.md) · [装配](./harmonic/assembly.md)） |
-| 行星 | 效率高、可多级；结构见 NGW/NW，齿轮见模数/齿系 | 需要转速/成本折中的轴 | [planetary/](./planetary/README.md) |
+| 行星 | 效率高、可多级；结构见 NGW/NW，齿轮见模数/齿系，架见笼式/悬臂 | 需要转速/成本折中的轴 | [planetary/](./planetary/README.md)（[类型](./planetary/types.md) · [齿轮](./planetary/gears.md) · [行星架](./planetary/carrier.md)） |
 | 摆线（含 RV） | 刚度高、抗冲击、往往更重 | 髋、踝等重载；轻量化摆线也在膝/髋 | [cycloidal/](./cycloidal/README.md)（[结构](./cycloidal/structure.md) · [额定](./cycloidal/ratings.md) · [装配](./cycloidal/assembly.md)） |
 
 准直驱 / 无减速是另一条路：几乎不经过减速机，靠电机本体扭矩。外转子更常见，见 [无框力矩电机](../frameless-motor/README.md)。
