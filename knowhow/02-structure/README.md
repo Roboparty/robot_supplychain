@@ -14,7 +14,7 @@
 | 压铸 | 小批壳体、复杂腔体 | [die-cast.md](./die-cast.md) |
 | 注塑 | 外观件、非承力罩 | [injection.md](./injection.md) |
 | 3D 打印 | 工装、手板、走线验证 | [3d-print.md](./3d-print.md) |
-| 表面处理 | 阳极、喷粉、电镀 | [surface.md](./surface.md) |
+| 表面处理 | 阳极、发黑、喷粉 | [surface/](./surface/README.md)（[阳极](./surface/anodize.md) · [发黑](./surface/black-oxide.md) · [喷涂](./surface/coating.md)） |
 
 ## 大类冻结纪律
 
