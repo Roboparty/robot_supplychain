@@ -18,6 +18,9 @@ secrets.json
 contracts/raw/
 scans/
 
+# Docs site
+site/dist/
+
 # OS / editor
 Thumbs.db
 Desktop.ini

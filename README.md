@@ -32,6 +32,16 @@
 
 研发样机 → 小批量试点。不是大规模量产 MRP，也不替代 ERP。
 
+## 本地文档站
+
+```text
+python -m pip install markdown
+python site/build.py
+python -m http.server 4173 --directory site/dist
+```
+
+浏览器打开 http://127.0.0.1:4173/index.html 。页面由仓库里的 Markdown 生成，改完重新 build 即可。
+
 ## 怎么往里写
 
 新元器件用 [templates/component.md](./templates/component.md) 开页，挂进对应大类 README。复盘结论用 [templates/knowhow-card.md](./templates/knowhow-card.md) 追加到该页末尾。不写私人联系方式。
