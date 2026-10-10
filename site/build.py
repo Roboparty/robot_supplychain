@@ -162,21 +162,24 @@ PAGE = """<!doctype html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
   <title>{title} · 机器人供应链 供应链</title>
   <link rel="icon" href="/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <header class="top">
     <button class="menu-btn" type="button">目录</button>
-    <a class="brand" href="/index.html"><img src="/logo.svg" alt="">机器人供应链 供应链</a>
+    <a class="brand" href="/index.html"><img src="/logo.svg" alt="">机器人供应链</a>
     <nav>
       <a href="/knowhow/index.html">知识库</a>
       <a href="/docs/gates.html">放行门</a>
       <a href="/playbooks/index.html">作业手册</a>
     </nav>
     <div class="spacer"></div>
-    <button class="search-btn" type="button">搜索 Ctrl K</button>
+    <button class="search-btn" type="button">搜索 ⌘K</button>
   </header>
   <div class="shell">
     <aside class="side">{sidebar}</aside>
