@@ -20,7 +20,7 @@
   <a href="./knowhow/README.md"><img src="https://img.shields.io/badge/Knowhow-分类树-0f766e?style=for-the-badge" alt="Knowhow"></a>
   <a href="./docs/gates.md"><img src="https://img.shields.io/badge/Gates-G0–G5-14b8a6?style=for-the-badge" alt="Gates"></a>
   <a href="./playbooks/README.md"><img src="https://img.shields.io/badge/Playbooks-作业手册-0b1220?style=for-the-badge" alt="Playbooks"></a>
-  <a href="./site/build.py"><img src="https://img.shields.io/badge/Docs-本地网页-5eead4?style=for-the-badge&labelColor=0b1220" alt="Docs"></a>
+  <a href="./供应链知识库.html"><img src="https://img.shields.io/badge/Docs-点开即看-5eead4?style=for-the-badge&labelColor=0b1220" alt="Docs"></a>
 </p>
 
 ---
@@ -72,17 +72,16 @@
 
 适用阶段：研发样机 → 小批量试点。不是大规模量产 MRP，也不替代 ERP。
 
-## 本地文档站
+## 点开即看
 
-和仓库 Markdown 是同一份内容，生成后带侧栏、搜索、本页目录。
+双击仓库根目录的 [供应链知识库.html](./供应链知识库.html)。不需要安装、不需要启动服务器，浏览器能打开就能看。Ctrl+K 搜索。
+
+改完 Markdown 后重新生成：
 
 ```bash
 python -m pip install markdown
 python site/build.py
-python -m http.server 4173 --directory site/dist
 ```
-
-浏览器打开 [http://127.0.0.1:4173/index.html](http://127.0.0.1:4173/index.html)。改完 Markdown 后重新 `python site/build.py` 即可。
 
 ## 怎么往里写
 

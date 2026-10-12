@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import base64
 import html
 import json
+import mimetypes
 import re
 import shutil
 from pathlib import Path
@@ -361,6 +363,175 @@ def toc_html(toc: list[tuple[str, str, str]]) -> str:
     return '<p class="toc-title">本页目录</p>' + "".join(links)
 
 
+def data_uri(path: Path) -> str:
+    mime = mimetypes.guess_type(path.name)[0] or "application/octet-stream"
+    return f"data:{mime};base64,{base64.b64encode(path.read_bytes()).decode('ascii')}"
+
+
+def standalone_href(url: str) -> str:
+    raw = url.strip()
+    if not raw or raw.startswith(("http://", "https://", "mailto:", "#", "?", "data:")):
+        return raw
+    path, _, anchor = raw.partition("#")
+    if path.startswith("/"):
+        out = f"?p={path}"
+        return f"{out}#{anchor}" if anchor else out
+    return raw
+
+
+def standalone_html(text: str) -> str:
+    def href(m: re.Match) -> str:
+        return f"href={m.group(1)}{standalone_href(m.group(2))}{m.group(1)}"
+
+    def src(m: re.Match) -> str:
+        url = m.group(2)
+        if url.startswith(("http://", "https://", "data:")):
+            return m.group(0)
+        file = ROOT / url.lstrip("/")
+        if file.is_file():
+            return f"src={m.group(1)}{data_uri(file)}{m.group(1)}"
+        return m.group(0)
+
+    text = re.sub(r"href=(['\"])([^'\"]+)\1", href, text)
+    return re.sub(r"src=(['\"])([^'\"]+)\1", src, text)
+
+
+def write_standalone(pages: dict[str, dict], search: list[dict]) -> Path:
+    css = (ROOT / "site" / "style.css").read_text(encoding="utf-8")
+    logo = data_uri(ROOT / "site" / "logo.svg")
+    packed = {}
+    for url, page in pages.items():
+        packed[url] = {
+            "title": page["title"],
+            "crumb": standalone_html(page["crumb"]),
+            "body": standalone_html(page["body"]),
+            "pager": standalone_html(page["pager"]),
+            "toc": standalone_html(page["toc"]),
+            "sidebar": standalone_html(page["sidebar"]),
+        }
+    for item in search:
+        item["url"] = standalone_href(item["url"])
+    dest = ROOT / "供应链知识库.html"
+    dest.write_text(
+        STANDALONE.replace("%%CSS%%", css)
+        .replace("%%LOGO%%", logo)
+        .replace("%%PAGES%%", json.dumps(packed, ensure_ascii=False).replace("</", "<\\/"))
+        .replace("%%SEARCH%%", json.dumps(search, ensure_ascii=False).replace("</", "<\\/")),
+        encoding="utf-8",
+    )
+    return dest
+
+
+STANDALONE = """<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <title>人形机器人供应链知识库 · 机器人供应链</title>
+  <style>%%CSS%%</style>
+</head>
+<body>
+  <header class="top">
+    <button class="menu-btn" type="button">目录</button>
+    <a class="brand" href="?p=/index.html"><img src="%%LOGO%%" alt="">机器人供应链</a>
+    <nav>
+      <a href="?p=/knowhow/index.html">知识库</a>
+      <a href="?p=/docs/gates.html">放行门</a>
+      <a href="?p=/playbooks/index.html">作业手册</a>
+    </nav>
+    <div class="spacer"></div>
+    <button class="search-btn" type="button">搜索 Ctrl K</button>
+  </header>
+  <div class="shell">
+    <aside class="side" id="side"></aside>
+    <main class="content">
+      <div class="crumb" id="crumb"></div>
+      <article class="doc" id="doc"></article>
+      <div class="pager" id="pager"></div>
+    </main>
+    <aside class="toc" id="toc"></aside>
+  </div>
+  <div class="mask" hidden>
+    <div class="modal">
+      <input placeholder="搜索牌号、工艺、坑…" aria-label="搜索">
+      <div class="hits"></div>
+    </div>
+  </div>
+  <script id="pages-data" type="application/json">%%PAGES%%</script>
+  <script id="search-data" type="application/json">%%SEARCH%%</script>
+  <script>
+    const PAGES = JSON.parse(document.getElementById("pages-data").textContent)
+    const SEARCH = JSON.parse(document.getElementById("search-data").textContent)
+    const side = document.getElementById("side")
+    const crumb = document.getElementById("crumb")
+    const doc = document.getElementById("doc")
+    const pager = document.getElementById("pager")
+    const toc = document.getElementById("toc")
+
+    function currentPath() {
+      return new URLSearchParams(location.search).get("p") || "/index.html"
+    }
+
+    function render() {
+      const path = currentPath()
+      const page = PAGES[path] || PAGES["/index.html"]
+      if (!page) return
+      document.title = page.title + " · 机器人供应链 供应链"
+      side.innerHTML = page.sidebar
+      crumb.innerHTML = page.crumb
+      doc.innerHTML = page.body
+      pager.innerHTML = page.pager
+      toc.innerHTML = page.toc
+      window.scrollTo(0, 0)
+      if (location.hash) {
+        const el = document.getElementById(decodeURIComponent(location.hash.slice(1)))
+        if (el) el.scrollIntoView()
+      }
+    }
+
+    document.querySelector(".menu-btn").addEventListener("click", () => side.classList.toggle("open"))
+    window.addEventListener("popstate", render)
+
+    document.body.addEventListener("click", (e) => {
+      const a = e.target.closest("a[href]")
+      if (!a) return
+      const href = a.getAttribute("href") || ""
+      if (!href.startsWith("?p=")) return
+      e.preventDefault()
+      history.pushState(null, "", href)
+      render()
+    })
+
+    const mask = document.querySelector(".mask")
+    const q = document.querySelector(".modal input")
+    const hits = document.querySelector(".hits")
+    function openSearch() { mask.hidden = false; q.focus() }
+    function closeSearch() { mask.hidden = true }
+    document.querySelector(".search-btn").addEventListener("click", openSearch)
+    mask.addEventListener("click", (e) => { if (e.target === mask) closeSearch() })
+    document.addEventListener("keydown", (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault(); openSearch()
+      }
+      if (e.key === "Escape") closeSearch()
+    })
+    q.addEventListener("input", () => {
+      const term = q.value.trim().toLowerCase()
+      if (term.length < 1) { hits.innerHTML = ""; return }
+      const found = SEARCH.filter((item) => (item.title + item.text).toLowerCase().includes(term)).slice(0, 12)
+      hits.innerHTML = found.map((item) =>
+        `<a href="${item.url}"><b>${item.title}</b><small>${item.url}</small></a>`
+      ).join("") || `<a>没有匹配「${term}」</a>`
+    })
+
+    render()
+  </script>
+</body>
+</html>
+"""
+
+
 def pager(active: str) -> str:
     rows = flatten(NAV)
     urls = [row[1] for row in rows]
@@ -398,6 +569,7 @@ def main() -> None:
 
     md = markdown.Markdown(extensions=["tables", "fenced_code", "sane_lists"])
     search = []
+    collected = {}
     pages = flatten(NAV)
     known = {url for _, url, _ in pages}
 
@@ -417,19 +589,30 @@ def main() -> None:
         search.append({"title": title, "url": url, "text": plain[:1200]})
         dest = OUT / out_path(src)
         dest.parent.mkdir(parents=True, exist_ok=True)
+        nav_url = url if url in known else "/index.html"
         page = PAGE.format(
             title=html.escape(title),
-            sidebar=render_nav(url if url in known else "/index.html"),
+            sidebar=render_nav(nav_url),
             crumb=crumb_for(url),
             body=rendered,
             pager=pager(url),
             toc=toc_html(toc),
         )
         dest.write_text(page, encoding="utf-8")
+        collected[url] = {
+            "title": title,
+            "sidebar": render_nav(nav_url),
+            "crumb": crumb_for(url),
+            "body": rendered,
+            "pager": pager(url),
+            "toc": toc_html(toc),
+        }
 
     (OUT / "search.json").write_text(json.dumps(search, ensure_ascii=False), encoding="utf-8")
+    standalone = write_standalone(collected, json.loads(json.dumps(search)))
     missing = [url for url in known if not (OUT / url.lstrip("/")).exists()]
     print(f"pages {len(search)} -> {OUT}")
+    print(f"standalone -> {standalone}")
     if missing:
         print("sidebar targets missing:")
         for url in missing:
