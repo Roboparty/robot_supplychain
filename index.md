@@ -4,7 +4,8 @@ outline: deep
 ---
 
 <div class="rp-hero">
-  <p class="rp-kicker">机器人供应链</p>
+  <div class="rp-hero-brand"><img src="/brand-logo.png" alt="机器人供应链"></div>
+  <p class="rp-kicker">Supply Chain Knowhow</p>
   <h1>人形机器人供应链知识库</h1>
   <p class="rp-lead">每种料是什么、用在哪一轴、选型必须冻什么、怎么验收、踩过什么坑。这里记判断口径，不记这一次买了谁。</p>
   <div class="rp-actions">

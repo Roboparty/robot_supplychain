@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="./site/logo.svg" width="48" height="48" alt="机器人供应链">
+  <img src="./site/brand-logo.png" height="64" alt="机器人供应链">
 </p>
 
 <h1 align="center">人形机器人供应链知识库</h1>
@@ -17,10 +17,10 @@
 </p>
 
 <p align="center">
-  <a href="./knowhow/README.md"><img src="https://img.shields.io/badge/Knowhow-分类树-0f766e?style=for-the-badge" alt="Knowhow"></a>
-  <a href="./docs/gates.md"><img src="https://img.shields.io/badge/Gates-G0–G5-14b8a6?style=for-the-badge" alt="Gates"></a>
-  <a href="./playbooks/README.md"><img src="https://img.shields.io/badge/Playbooks-作业手册-0b1220?style=for-the-badge" alt="Playbooks"></a>
-  <a href="./knowhow.html"><img src="https://img.shields.io/badge/Docs-点开即看-5eead4?style=for-the-badge&labelColor=0b1220" alt="Docs"></a>
+  <a href="./knowhow/README.md"><img src="https://img.shields.io/badge/Knowhow-分类树-283F90?style=for-the-badge" alt="Knowhow"></a>
+  <a href="./docs/gates.md"><img src="https://img.shields.io/badge/Gates-G0–G5-4C6FD4?style=for-the-badge" alt="Gates"></a>
+  <a href="./playbooks/README.md"><img src="https://img.shields.io/badge/Playbooks-作业手册-121A33?style=for-the-badge" alt="Playbooks"></a>
+  <a href="./knowhow.html"><img src="https://img.shields.io/badge/Docs-点开即看-A5B8F5?style=for-the-badge&labelColor=283F90" alt="Docs"></a>
 </p>
 
 ---

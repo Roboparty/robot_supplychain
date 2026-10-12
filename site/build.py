@@ -174,7 +174,7 @@ PAGE = """<!doctype html>
 <body>
   <header class="top">
     <button class="menu-btn" type="button">目录</button>
-    <a class="brand" href="/index.html"><img src="/logo.svg" alt="">机器人供应链</a>
+    <a class="brand" href="/index.html"><img src="/brand-logo.png" alt="机器人供应链"></a>
     <nav>
       <a href="/knowhow/index.html">知识库</a>
       <a href="/docs/gates.html">放行门</a>
@@ -387,9 +387,11 @@ def standalone_html(text: str) -> str:
         url = m.group(2)
         if url.startswith(("http://", "https://", "data:")):
             return m.group(0)
-        file = ROOT / url.lstrip("/")
-        if file.is_file():
-            return f"src={m.group(1)}{data_uri(file)}{m.group(1)}"
+        rel = url.lstrip("/")
+        candidates = [ROOT / rel, ROOT / "site" / Path(rel).name, OUT / rel]
+        for file in candidates:
+            if file.is_file():
+                return f"src={m.group(1)}{data_uri(file)}{m.group(1)}"
         return m.group(0)
 
     text = re.sub(r"href=(['\"])([^'\"]+)\1", href, text)
@@ -398,7 +400,7 @@ def standalone_html(text: str) -> str:
 
 def write_standalone(pages: dict[str, dict], search: list[dict]) -> Path:
     css = (ROOT / "site" / "style.css").read_text(encoding="utf-8")
-    logo = data_uri(ROOT / "site" / "logo.svg")
+    brand = data_uri(ROOT / "site" / "brand-logo.png")
     packed = {}
     for url, page in pages.items():
         packed[url] = {
@@ -414,7 +416,7 @@ def write_standalone(pages: dict[str, dict], search: list[dict]) -> Path:
     dest = ROOT / "knowhow.html"
     dest.write_text(
         STANDALONE.replace("%%CSS%%", css)
-        .replace("%%LOGO%%", logo)
+        .replace("%%LOGO%%", brand)
         .replace("%%PAGES%%", json.dumps(packed, ensure_ascii=False).replace("</", "<\\/"))
         .replace("%%SEARCH%%", json.dumps(search, ensure_ascii=False).replace("</", "<\\/")),
         encoding="utf-8",
@@ -434,7 +436,7 @@ STANDALONE = """<!doctype html>
 <body>
   <header class="top">
     <button class="menu-btn" type="button">目录</button>
-    <a class="brand" href="?p=/index.html"><img src="%%LOGO%%" alt="">机器人供应链</a>
+    <a class="brand" href="?p=/index.html"><img src="%%LOGO%%" alt="机器人供应链"></a>
     <nav>
       <a href="?p=/knowhow/index.html">知识库</a>
       <a href="?p=/docs/gates.html">放行门</a>
@@ -557,6 +559,7 @@ def main() -> None:
     shutil.copy(ROOT / "site" / "style.css", OUT / "style.css")
     shutil.copy(ROOT / "site" / "app.js", OUT / "app.js")
     shutil.copy(ROOT / "site" / "logo.svg", OUT / "logo.svg")
+    shutil.copy(ROOT / "site" / "brand-logo.png", OUT / "brand-logo.png")
 
     for path in ROOT.rglob("*"):
         if not path.is_file() or path.suffix.lower() not in ASSETS:

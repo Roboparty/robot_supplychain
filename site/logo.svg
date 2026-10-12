@@ -1,5 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="7" fill="#0B1220"/>
-  <path d="M8 20.5L16 8l8 12.5" stroke="#5EEAD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="16" cy="21.5" r="2.2" fill="#F8FAFC"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <circle cx="32" cy="32" r="32" fill="#283F90"/>
+  <!-- robot head cutout, lower-left bias matching brand mark -->
+  <g transform="translate(10 18)">
+    <path fill="#FFFFFF" d="M20.5 2.2c1.1 0 2 .9 2 2v2.1c5.6.9 9.8 5.7 9.8 11.5v10.4c0 3.1-2.5 5.6-5.6 5.6H14.3c-3.1 0-5.6-2.5-5.6-5.6V17.8c0-5.8 4.2-10.6 9.8-11.5V4.2c0-1.1.9-2 2-2zm-6.4 17.2c-1.35 0-2.45 1.1-2.45 2.45S12.75 24.3 14.1 24.3s2.45-1.1 2.45-2.45-1.1-2.45-2.45-2.45zm12.6 0c-1.35 0-2.45 1.1-2.45 2.45s1.1 2.45 2.45 2.45 2.45-1.1 2.45-2.45-1.1-2.45-2.45-2.45z"/>
+  </g>
 </svg>

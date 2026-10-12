@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" fill="none">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="640" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0B1220"/>
-      <stop offset="0.55" stop-color="#0F1B2D"/>
-      <stop offset="1" stop-color="#132A3F"/>
+      <stop stop-color="#121A33"/>
+      <stop offset="0.55" stop-color="#1A2754"/>
+      <stop offset="1" stop-color="#283F90"/>
     </linearGradient>
-    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(980 120) rotate(90) scale(280 360)">
-      <stop stop-color="#2DD4BF" stop-opacity="0.45"/>
-      <stop offset="1" stop-color="#2DD4BF" stop-opacity="0"/>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(980 140) rotate(90) scale(300 380)">
+      <stop stop-color="#5B7BE8" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#5B7BE8" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
       <path d="M32 0H0V32" stroke="#F8FAFC" stroke-opacity="0.05"/>
@@ -16,10 +16,15 @@
   <rect width="1280" height="640" fill="url(#bg)"/>
   <rect width="1280" height="640" fill="url(#glow)"/>
   <rect width="1280" height="420" fill="url(#grid)"/>
-  <circle cx="1080" cy="520" r="150" stroke="#5EEAD4" stroke-opacity="0.28"/>
-  <circle cx="1080" cy="520" r="96" stroke="#5EEAD4" stroke-opacity="0.18"/>
-  <text x="88" y="168" fill="#5EEAD4" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="8">æœºå™¨äººä¾›åº”é“¾</text>
-  <text x="88" y="280" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="72" font-weight="800">ºb:hº›”þåÆ“</text>
-  <text x="88" y="360" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="30">	‹ · Œ6 · Q · G0G5</text>
-  <text x="88" y="470" fill="#99F6E4" font-family="Segoe UI, Arial, sans-serif" font-size="22">à»ÓcU · à IQC Ñ™ · à NCR Á©e</text>
+  <circle cx="1080" cy="500" r="150" stroke="#A5B8F5" stroke-opacity="0.28"/>
+  <circle cx="1080" cy="500" r="96" stroke="#A5B8F5" stroke-opacity="0.18"/>
+  <circle cx="96" cy="132" r="34" fill="#283F90"/>
+  <circle cx="96" cy="132" r="34" fill="none" stroke="#FFFFFF" stroke-opacity="0.15"/>
+  <g transform="translate(76 108)">
+    <path fill="#FFFFFF" d="M20.5 2.2c1.1 0 2 .9 2 2v2.1c5.6.9 9.8 5.7 9.8 11.5v10.4c0 3.1-2.5 5.6-5.6 5.6H14.3c-3.1 0-5.6-2.5-5.6-5.6V17.8c0-5.8 4.2-10.6 9.8-11.5V4.2c0-1.1.9-2 2-2zm-6.4 17.2c-1.35 0-2.45 1.1-2.45 2.45S12.75 24.3 14.1 24.3s2.45-1.1 2.45-2.45-1.1-2.45-2.45-2.45zm12.6 0c-1.35 0-2.45 1.1-2.45 2.45s1.1 2.45 2.45 2.45 2.45-1.1 2.45-2.45-1.1-2.45-2.45-2.45z"/>
+  </g>
+  <text x="150" y="122" fill="#A5B8F5" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6">æœºå™¨äººä¾›åº”é“¾</text>
+  <text x="88" y="280" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="68" font-weight="800">???????????</text>
+  <text x="88" y="360" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="30">?? · ?? · ? · G0–G5</text>
+  <text x="88" y="470" fill="#C7D2FE" font-family="Segoe UI, Arial, sans-serif" font-size="22">???????? · ? IQC ??? · ? NCR ?????</text>
 </svg>
