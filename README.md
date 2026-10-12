@@ -20,7 +20,7 @@
   <a href="./knowhow/README.md"><img src="https://img.shields.io/badge/Knowhow-分类树-0f766e?style=for-the-badge" alt="Knowhow"></a>
   <a href="./docs/gates.md"><img src="https://img.shields.io/badge/Gates-G0–G5-14b8a6?style=for-the-badge" alt="Gates"></a>
   <a href="./playbooks/README.md"><img src="https://img.shields.io/badge/Playbooks-作业手册-0b1220?style=for-the-badge" alt="Playbooks"></a>
-  <a href="./供应链知识库.html"><img src="https://img.shields.io/badge/Docs-点开即看-5eead4?style=for-the-badge&labelColor=0b1220" alt="Docs"></a>
+  <a href="./knowhow.html"><img src="https://img.shields.io/badge/Docs-点开即看-5eead4?style=for-the-badge&labelColor=0b1220" alt="Docs"></a>
 </p>
 
 ---
@@ -74,7 +74,7 @@
 
 ## 点开即看
 
-双击仓库根目录的 [供应链知识库.html](./供应链知识库.html)。不需要安装、不需要启动服务器，浏览器能打开就能看。Ctrl+K 搜索。
+用资源管理器双击 [knowhow.html](./knowhow.html)（不要用 Cursor 里的链接打开）。不需要安装、不需要启动服务器。Ctrl+K 搜索。
 
 改完 Markdown 后重新生成：
 

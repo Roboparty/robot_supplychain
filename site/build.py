@@ -411,7 +411,7 @@ def write_standalone(pages: dict[str, dict], search: list[dict]) -> Path:
         }
     for item in search:
         item["url"] = standalone_href(item["url"])
-    dest = ROOT / "供应链知识库.html"
+    dest = ROOT / "knowhow.html"
     dest.write_text(
         STANDALONE.replace("%%CSS%%", css)
         .replace("%%LOGO%%", logo)
