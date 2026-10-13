@@ -1,15 +1,11 @@
 <p align="center">
-  <img src="./site/banner.svg" alt="机器人供应链 人形机器人供应链知识库" width="100%">
+  <img src="./site/banner.svg" alt="机器人供应链知识库" width="100%">
 </p>
 
-<p align="center">
-  <img src="./site/brand-logo.png" height="64" alt="机器人供应链">
-</p>
-
-<h1 align="center">人形机器人供应链知识库</h1>
+<h1 align="center">机器人供应链</h1>
 
 <p align="center">
-  <strong>机器人供应链</strong> · 每种料是什么、用在哪一轴、选型冻什么、怎么验收、踩过什么坑
+  每种料是什么、用在哪一轴、选型冻什么、怎么验收、踩过什么坑
 </p>
 
 <p align="center">
@@ -35,7 +31,7 @@
 | Gate、作业手册、模板 | 未脱敏对公账号、身份证等 PII |
 | 可公开协作的工艺与牌号知识 | 供应商完整电话 / 个人微信 |
 
-姊妹作业仓库是 `作业仓库`：那里记询价、PO、供应商名录；这里记「这颗料是什么、下次怎么判」。
+询价、PO、供应商名录放在作业仓库；这里只记「这颗料是什么、下次怎么判」。
 
 ## 先读这三页
 
