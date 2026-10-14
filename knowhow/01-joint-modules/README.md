@@ -10,13 +10,14 @@
 |---|---|---|
 | 减速机 | 把电机高速小扭变成关节低速大扭 | [reducer/](./reducer/README.md) |
 | 无框力矩电机 | 电磁转矩；先分内转子 / 外转子 | [frameless-motor/](./frameless-motor/README.md) |
-| 编码器 | 告诉控制器转子/关节在哪 | [encoder.md](./encoder.md) |
+| 编码器 | 单编 / 双编 / 伪双编；磁编 / 电感编 / 光编 | [encoder/](./encoder/README.md) |
 | 驱动器 | 电流环 / 速度环 / 位置环与总线 | [driver.md](./driver.md) |
 | 制动器 | 断电保持、防坠落 | [brake.md](./brake.md) |
 | 一体化关节 | 上述零件做成一个可采购单元 | [integrated-joint.md](./integrated-joint.md) |
 
 减速机再往下分：[谐波](./reducer/harmonic/README.md)（[结构](./reducer/harmonic/structure.md) · [额定](./reducer/harmonic/ratings.md) · [装配](./reducer/harmonic/assembly.md)） · [行星](./reducer/planetary/README.md)（[NGW/NW](./reducer/planetary/types.md) · [齿轮](./reducer/planetary/gears.md) · [行星架](./reducer/planetary/carrier.md)） · [摆线 / RV](./reducer/cycloidal/README.md)（[结构](./reducer/cycloidal/structure.md) · [额定](./reducer/cycloidal/ratings.md) · [装配](./reducer/cycloidal/assembly.md)） · [其它路径](./reducer/other.md)（蜗轮 / 锥齿 / 带 / 直驱）。  
-无框电机再往下分：[内转子](./frameless-motor/inner-rotor.md) · [外转子](./frameless-motor/outer-rotor.md)；[槽极](./frameless-motor/slot-pole.md) · [绕线](./frameless-motor/winding.md) · [磁钢](./frameless-motor/magnet.md) · [叠片 / 分瓣](./frameless-motor/core.md) · 装配 / 霍尔 / 温敏见 [frameless-motor/](./frameless-motor/README.md)。
+无框电机再往下分：[内转子](./frameless-motor/inner-rotor.md) · [外转子](./frameless-motor/outer-rotor.md)；[槽极](./frameless-motor/slot-pole.md) · [绕线](./frameless-motor/winding.md) · [磁钢](./frameless-motor/magnet.md) · [叠片 / 分瓣](./frameless-motor/core.md) · 装配 / 霍尔 / 温敏见 [frameless-motor/](./frameless-motor/README.md)。  
+编码器再往下分：[单编 / 双编 / 伪双编](./encoder/count.md) · [磁编](./encoder/magnetic.md) · [电感编](./encoder/inductive.md) · [光编](./encoder/optical.md)。
 
 ## 大类必须一起冻的接口
 
